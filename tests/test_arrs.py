@@ -7,8 +7,14 @@ def test_get():
 
 
 
-
-
 def test_slice():
     assert arrs.my_slice([1, 2, 3, 4], 1, 3) == [2, 3]
     assert arrs.my_slice([1, 2, 3], 1) == [2, 3]
+
+    assert isinstance(arrs.my_slice([], 1), list)
+    assert arrs.my_slice([], 1) == []
+    assert arrs.my_slice([1, 2, 3]) == [1, 2, 3]
+    assert arrs.my_slice([1, 2, 3], 0, 5) == [1, 2, 3]
+    assert arrs.my_slice([1, 2, 3], 2, 1) == []
+    assert arrs.my_slice([1, 2, 3], -2) == [2, 3]
+    assert arrs.my_slice([1, 2, 3], 0, -1) == [1, 2]
